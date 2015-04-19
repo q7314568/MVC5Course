@@ -13,7 +13,15 @@ namespace MVC5Course.Controllers
     public class ClientsController : Controller
     {
         private FabricsEntities db = new FabricsEntities();
-
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(ViewModel.LoginViewModel data)
+        {
+            return View("LoginDetails",data);
+        }
         // GET: Clients
         public ActionResult Index()
         {
